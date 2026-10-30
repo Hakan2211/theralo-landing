@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource/libertinus-serif/400.css';
+@import '@fontsource/libertinus-serif/600.css';
+
+@theme {
+  --color-paper: #f7f6f2;
+  --color-ink: #23272b;
+  --color-ink-soft: #6b7075;
+  --color-line: #e8e5df;
+  --color-teal: #337875;
+  --color-teal-dark: #245f5c;
+  --color-teal-tint: #e3efee;
+  --color-night: #191814;
+  --font-sans: 'Inter Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-serif: 'Libertinus Serif', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
