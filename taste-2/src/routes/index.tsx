@@ -1,29 +1,30 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { Ablauf } from '@/components/ablauf'
 import { Fragen } from '@/components/fragen'
+import { Hero, Promises } from '@/components/hero'
 import { Lotse } from '@/components/lotse'
 import { Nav } from '@/components/nav'
 import { Preise } from '@/components/preise'
-import { Abend, Footer } from '@/components/schluss'
+import { Footer, Schluss } from '@/components/schluss'
 import { Schweigepflicht } from '@/components/schweigepflicht'
-import { Stage } from '@/components/stage'
 import { Video } from '@/components/video'
-import { useReveal } from '@/lib/reveal'
 
 export const Route = createFileRoute('/')({ component: Home })
 
 function Home() {
-  useReveal()
   return (
     <>
       <Nav />
       <main>
-        <Stage />
-        <Video />
+        <Hero />
+        <Promises />
+        <Ablauf />
         <Lotse />
         <Schweigepflicht />
+        <Video />
         <Preise />
         <Fragen />
-        <Abend />
+        <Schluss />
       </main>
       <Footer />
     </>

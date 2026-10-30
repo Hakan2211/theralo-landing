@@ -1,64 +1,32 @@
-# Variante C: Arbeitsnotizen (tasteskill v2 + emil-design-eng, Richtung „The split stage“)
+# Option 2, überarbeitet: App-Marke + shadcn/ui
 
-Inhalte: `../shared/CONTENT.md` (für alle Varianten gleich). Diese Datei hält die Schritte des Skills fest.
+Inhalte: `../shared/CONTENT.md`. Runde 2 (Split-Stage, Sand/Moos, Gambarino/General Sans) steht in der Git-Historie und in `.taste-skill/`.
 
-## 1. Brief
+## Warum überarbeitet
 
-- Thema: Theralo, Windows-Desktop-App für niedergelassene Psychotherapeut:innen (GKV). Sitzung → Notiz → Bericht an den Gutachter (Muster PTV 3). Daten verschlüsselt auf dem Computer, jede KI-Anfrage pseudonymisiert.
-- Publikum: Therapeut:innen, die Berichte abends und am Wochenende schreiben; skeptisch gegenüber KI und Cloud (§ 203 StGB). Preise nur für Praxen, MVZ und Unternehmen.
-- Die eine Handlung: **Für Windows herunterladen**. Zweitens: Video ansehen; drittens (Praxen): Angebot anfragen.
-- Stack: TanStack Start, Tailwind v4 (nur Reset und wenige Hilfsklassen, sonst eigenes CSS), statisch vorgerendert.
-- Marke: bewusst **nicht** übernommen. Die Richtung bringt Sand und Moos, Gambarino und General Sans (selbst gehostet unter `public/fonts`, keine CDN-Anfrage).
-- Bilder, die es wirklich gibt: 8 echte Screenshots der Demo-Praxis und Ausschnitte, das 4:50-Video, zwei Stimmungsfotos aus dem gezogenen Satz („Interior and table“, Unsplash, lokal in `public/photos`).
+Rückmeldung zu Runde 2: wirkte billig und unaufgeräumt; Schrift und Schriftgrößen schlecht, Menü zu klein; Screenshots alt (Lotse noch mit dem überlaufenden „Übernehmen“-Knopf) und nicht responsiv (feste Ausschnitte mit Pixel-Versatz); zu viel Fließtext ohne Struktur; das Foto unten passte nicht zum Stil.
 
-### Inventar
+## Entscheidungen
 
-Übernommen aus `../taste/NOTES.md` (PTV 3, Chiffre S140391, [PERSON_1] und „Pat.“, „Woher kommt das?“, Kontingent 10 von 12, Zeitmarke 00:12, Notfall-Kit, Unterschrift, § 203 StGB / AES-256, KBV-Leitfaden, die Gutachter-Frage, Berichte am Abend). Dazu für diese Variante:
+- **Marke der App**: Farb-Tokens 1:1 aus `D:\Datorga\ui\src\styles.css` (Papier #f7f6f2, Petrol #337875, Sand), Inter für Text, Libertinus Serif für Überschriften und Wortmarke (selbst gehostet über @fontsource). Die Screenshots passen damit zur Seite.
+- **shadcn/ui** (new-york, wie die App): Button (+ Größe `xl`), Badge, Card, Tabs, Accordion, NavigationMenu, Sheet, Switch, ToggleGroup, Textarea, Label, Separator.
+- **Typo**: Fließtext 17/18 px, Zeilenhöhe 1,65; Überschriften `t-display` / `t-h2` / `t-h3`, Lead-Sätze `t-lead`, Eyebrows `t-eyebrow` (styles.css).
+- **Menü**: 72 px hoch, Links 16 px, unter `lg` ein Sheet.
+- **Struktur statt Textwänden**: jede Sektion = Eyebrow + Überschrift + ein Satz; Details in Karten, Stichpunkten, Tabs oder im Akkordeon.
+  - Hero → drei Versprechen → So geht's (vertikale Tabs, Telefon: Karten) + „Im Alltag“ → Bericht-Lotse (Tabs) → Datenschutz (4 Karten + interaktive Pseudonymisierung) → Video → Preise (3 Teile + Angebots-Panel) → Fragen (Akkordeon) → Schluss (Produktbild statt Foto) → Fuß.
+- **Screenshots** ganz und responsiv im Fensterrahmen (`BrowserFrame` + `Shot`, WebP 1×/2× mit `srcSet`). Keine Stockfotos mehr.
+- Die HTML-Nachbauten der App-Oberfläche im Lotse-Abschnitt sind durch echte Screenshots ersetzt.
+- Nitro mit `noExternals: true`: der Datei-Tracer scheitert unter Windows/Node 25 an `tslib` (kommt über Radix).
 
-13. Der Satz der App selbst: „**Alle Daten bleiben auf diesem Gerät**“ (Ansicht Heute) und „Datenbank verschlüsselt“ (Fußzeile jeder Ansicht).
-14. Der Claim „Dokumentation, die in der Praxis **bleibt**“: das Produkt verspricht Stillstand des Ortes, nicht Bewegung.
+## Screenshots neu (30.10.2026)
 
-## 2. Argument
+Aus der Demo-Praxis nach Slice 41/42, 1280 × 800 CSS-px bei Faktor 2, mit einer Scratch-Kopie von `D:\Datorga\scripts\video\record.mjs --dry` (Overlays ausgeblendet, CDP-Screenshot). Liste: `../shared/screens/README.md`.
 
-| Abschnitt | Behauptung | Beweis |
-|---|---|---|
-| Hero | Theralo dokumentiert mit Ihnen, und alles bleibt auf Ihrem Computer. | Echter Bericht-Lotse in Originalgröße in der festen Hälfte; Download-Knopf |
-| So geht's | Aus der Sitzung wird in vier Schritten ein Bericht, plus Alltag (Kontingent, Kalender). | Fünf Absätze mit Einstieg; zu jedem wechselt der feste Bildschirm, darunter Ausschnitte |
-| Video | So sieht es in 5 Minuten aus. | Das Video mit Poster |
-| Bericht-Lotse | Er bereitet vier Dinge vor: Entwurf, Quelle, Gutachter-Check, Bericht. | Index zum Anklicken, das Dokument in HTML (data-ui) |
-| Schweigepflicht | § 203 ist eingebaut: lokal, pseudonymisiert, Wahl der KI, nie an die KI. | Feste Vorschau „Was wurde gesendet?“, die jede Einstellung sofort ändert |
-| Preise | Für Praxen, aus drei Teilen, auf Anfrage; testen kostenlos. | Zwei Farbfelder, Angebot anfragen (mailto), Kostenlos testen |
-| Fragen | Installation, SmartScreen, Voraussetzungen, Kosten, Internet, KI, Aufnahmen, Mac. | 8 Antworten als Lesetext |
-| Schluss + Fuß | Weniger Abende am Bericht. | Letztes Foto, Download; Menü groß, Impressum, Datenschutz |
+## Prüfung
 
-## 3. Richtung
+- `npm run typecheck`, `npm run build` (3 Seiten vorgerendert).
+- Playwright/Edge bei 390/768/1280/1440: kein horizontaler Überlauf, keine Konsolenfehler, Menülinks 16 px; Tabs (auch per Pfeiltaste), Akkordeon, Pseudonymisierung, Anbieterwahl, mobiles Menü (Esc schließt, Link schließt und springt).
 
-Zugeteilt: **The split stage** (Seed 1172244463, Sektor health, Ton quiet), Hero „Menu column, sticky photograph“, Typ Gambarino / General Sans, Farbe „Sand and moss“, Bewegung „Slow crossfade“. Die Richtung war vorgegeben; sie passt, weil das Versprechen des Produkts selbst Stillstand ist (die Daten bleiben, wo sie sind).
+## Offen
 
-## 4. Idee
-
-> Auf dieser Seite wird **der eigene Computer, auf dem alles bleibt**, zur **festen Bühnenhälfte**: die echte Theralo-Oberfläche steht in Originalgröße still, während der Text an ihr vorbeiläuft; sie wechselt nur den Bildschirm, nie den Ort.
-
-Mitbewerber-Test: Eine Cloud-Dokumentation kann „die Hälfte, die sich nie bewegt“ nicht als Beweis benutzen; ihr Versprechen ist das Gegenteil (überall verfügbar).
-
-**Das lebendige Ding:** die feste Vorschau „Was wurde gesendet?“ im Abschnitt Schweigepflicht. Man tippt einen eigenen Satz (Namen, Orte, Daten werden zu [PERSON_1], [ORT_1], [DATUM_1], die Patientin zu „Pat.“), wählt OpenRouter / Requesty / lokales Modell, schaltet Einwilligung und USB-Sicherung, und die Vorschau ändert sich sofort. Zweites, kleineres: der Index des Bericht-Lotsen tauscht das Dokument. Ohne Skript: fester Beispielsatz, erstes Dokument sichtbar.
-
-## Abweichungen vom Bogen
-
-- Feste Hälfte zeigt **Screenshots in Originalgröße auf Moosgrün** statt eines Fotos („or the object centred on a flat field“ erlaubt das). Der Balken unten trägt statt Öffnungszeiten und Adresse die Bildunterschrift des aktuellen Bildschirms und „Demo-Praxis, erfundene Personen“.
-- Ecken eckig, ein Knopf-Format (Bogen-Anpassung). Wortmarke des Heros wandert in die geforderte Menüleiste.
-- Abschnittsfolge an das Argument angepasst: So geht's sitzt mit dem Hero auf derselben Bühne; Video eingefügt (Pflicht); „pricing: Two plans“ trägt Anfrage (links, Moos) gegen die drei Preisbestandteile (rechts, Sand), keine Preise.
-- „Fixed output, live controls“: Blöcke 30vh statt 50vh auseinander; auf dem Telefon ist die Vorschau nicht klebend (der Inspektor meldete verdeckte Überschriften), sondern steht vor den Bedienelementen.
-- Showcase-Namen ohne Artikel („Gutachter-Check“ statt „Der Gutachter-Check“), damit jeder auf eine Zeile passt.
-- Keine Archivbilder (Software mit echter Oberfläche); zwei gezogene Stimmungsfotos (Logan Adermatt: Stuhl am Fenster in der Dämmerung, im Schlussbild gespiegelt; David Mao: grüne Tasse am Morgen, im Fuß), Gutschrift im Fuß. Austauschbar.
-- Crossfade: alter Bildschirm geht in 500 ms, neuer kommt in 1,1 s nach 350 ms, damit sich zwei Oberflächen nie lange überlagern; bei reduzierter Bewegung 240 ms Blende.
-
-## Gate und Kritik
-
-- `lint.mjs src`: 0 FAIL, 0 WARN (Ränder der App-Ausschnitte mit `taste-skill-ignore`, sie sind data-ui).
-- `inspect.mjs` (Produktions-Build, 1440/768/390): 0 FAIL, 0 WARN. Größen 14 / 19 / 26 / 44 / 71 px, Gambarino + General Sans geladen, 13 Bilder, Hero-Medium 71 %.
-- Playwright (Edge): keine Konsolenfehler, kein horizontaler Überlauf bei 375/390/768/1440; Menü: aria-expanded, Esc schließt und gibt Fokus zurück, geschlossen `visibility:hidden` + `inert`, schließt beim Link.
-- Runde 1: Design 7,5 · Benutzbarkeit 8 · Kreativität 8 · Inhalt 8 → 7,8. Behoben: Hero-Titel auf drei Zeilen (Maß 13ch → 17ch), Telefon-Vorschau klebte über der Überschrift, Video höher als ein Bildschirm (jetzt neben dem Titel), Sandloch unter dem Lotsen, zwei Schritte ohne Beleg, Ausschnitte wurden durch eine CSS-Spezifität leer gerendert.
-- Runde 2: Design 8 · Benutzbarkeit 8 · Kreativität 8 · Inhalt 8 → 8,0. Behoben: Segmentwahl auf dem Telefon umbrechend, zu langes Sandband vor den Preisen.
-- Animationen nach `review-animations`: Ease-out `cubic-bezier(0.23,1,0.32,1)`, Druck `scale(0.97)`, Hover nur unter `(hover:hover) and (pointer:fine)`, nur transform/opacity (Farbübergänge an Knöpfen ausgenommen), keine Keyframes, kein `scale(0)`, jede Bewegung mit reduzierter Fassung. Bewusst lang: der Bühnen-Crossfade (Signatur) und das langsame Schlussbild (2,4 s), beide nicht interaktiv.
-- Offen: Impressum und Datenschutzerklärung sind Platzhalter; die beiden Stimmungsfotos sind austauschbar; Gutachter-Check-Fragment und PTV-3-Blatt sind aus der Demo-Praxis nachgebaut.
+Impressum und Datenschutzerklärung sind Platzhalter. Kontaktadresse vorläufig.

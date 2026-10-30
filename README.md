@@ -5,7 +5,7 @@ Varianten der Landingpage für [Theralo](https://github.com/Hakan2211/datorga) (
 | Ordner | Richtung | Port |
 |---|---|---|
 | `taste/` | Option 1: Aktenreiter (one-motif) | 3200 |
-| `taste-2/` | Option 2: Die geteilte Bühne (split-stage) | 3201 |
+| `taste-2/` | Option 2, überarbeitet: App-Marke + shadcn/ui (Runde 2: split-stage) | 3201 |
 | `taste-3/` | Option 3: Der gedruckte Jahresbericht (editorial-report) | 3202 |
 | `taste-4/` | Option 4: Farbkapitel (colour-chapters) | 3203 |
 | `vanilla/` | Runde 1, ohne Design-Skills | 3100 |

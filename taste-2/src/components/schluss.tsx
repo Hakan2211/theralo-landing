@@ -1,108 +1,112 @@
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 import { CONTACT_EMAIL, DOWNLOAD_SIZE, DOWNLOAD_URL, RELEASES_URL, REPO_URL, VERSION } from '@/lib/site'
+import { BrowserFrame } from './browser-frame'
 import { WindowsMark } from './icons'
-import { NAV } from './nav'
+import { NAV, Wordmark } from './nav'
+import { Container } from './section'
+import { Shot } from './shot'
 
-/** The last photograph: the evening a report used to take. Text in the calm half. */
-export function Abend() {
+/** Last call to action: the download, with the app itself rising out of the bottom edge. */
+export function Schluss() {
   return (
-    <section className="last on-dark" data-rise-photo aria-labelledby="abend-h">
-      <div className="last-photo">
-        <img
-          src="/photos/abend.jpg"
-          alt="Ein Holzstuhl vor einem Fenster mit Vorhang in der Abenddämmerung"
-          width={2400}
-          height={1350}
-          loading="lazy"
-        />
-      </div>
-      <div className="last-text">
-        <h2 id="abend-h" className="t-display max-w-[14ch]" data-rise>
-          Weniger Abende am Bericht.
-        </h2>
-        <p className="mt-6 max-w-[42ch]" data-rise style={{ '--i': 1 } as never}>
-          Laden Sie Theralo herunter und probieren Sie alles in der Demo-Praxis aus, mit erfundenen Beispieldaten und
-          getrennt von Ihren echten Daten.
-        </p>
-        <div className="mt-8" data-rise style={{ '--i': 2 } as never}>
-          <a href={DOWNLOAD_URL} className="btn btn-paper">
-            <WindowsMark /> Für Windows herunterladen
-          </a>
-          <p className="t-small mt-3" style={{ color: '#e6e1d6' }}>
-            Version {VERSION} · Windows 10/11 · {DOWNLOAD_SIZE}
+    <section aria-labelledby="schluss-h" className="overflow-hidden pt-20 md:pt-28">
+      <Container>
+        <div className="relative overflow-hidden rounded-3xl border bg-sand px-6 pt-14 text-center sm:px-12 md:pt-20">
+          <h2 id="schluss-h" className="t-h2 rise mx-auto max-w-[18ch]">
+            Weniger Abende am Bericht.
+          </h2>
+          <p className="t-lead rise mx-auto mt-4 max-w-[44ch]">
+            Probieren Sie alles in der Demo-Praxis aus, mit erfundenen Beispieldaten und getrennt von Ihren echten Daten.
           </p>
+          <div className="rise mt-8 flex flex-col items-center gap-3">
+            <Button asChild size="xl">
+              <a href={DOWNLOAD_URL}>
+                <WindowsMark /> Für Windows herunterladen
+              </a>
+            </Button>
+            <p className="text-sm text-muted-foreground">
+              Version {VERSION} · Windows 10/11 · {DOWNLOAD_SIZE}
+            </p>
+          </div>
+          <div className="rise mx-auto mt-12 max-w-4xl translate-y-2 md:mt-16">
+            <BrowserFrame className="rounded-b-none border-b-0 shadow-xl">
+              <div className="aspect-[16/7] overflow-hidden">
+                <Shot
+                  name="heute"
+                  alt="Theralo, Ansicht Heute: Termin um 10:00, Aufgaben und fällige Abschriften und Anträge"
+                  sizes="(min-width: 1024px) 896px, 100vw"
+                />
+              </div>
+            </BrowserFrame>
+          </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }
 
 export function Footer() {
   return (
-    <footer className="foot on-dark">
-      <div className="foot-photo">
-        <img
-          src="/photos/tasse.jpg"
-          alt="Eine grüne Tasse auf einem Nachttisch am Morgen"
-          width={1600}
-          height={1000}
-          loading="lazy"
-        />
-      </div>
-      <div className="foot-menu">
-        <p className="serif t-lead">Theralo</p>
-        <ul className="foot-links mt-10">
-          {NAV.map((n) => (
-            <li key={n.href}>
-              <a href={n.href} className="serif t-display">
-                {n.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-16 grid gap-8 sm:grid-cols-2">
-          <div className="t-small">
-            <p className="medium">Kontakt</p>
-            <p className="mt-2">
-              <a href={`mailto:${CONTACT_EMAIL}`} className="link">
-                {CONTACT_EMAIL}
-              </a>
-            </p>
-            <p className="mt-1">
-              <a href={DOWNLOAD_URL} className="link">
+    <footer className="mt-20 border-t bg-sidebar">
+      <Container className="grid gap-10 py-14 md:grid-cols-12">
+        <div className="md:col-span-5">
+          <Wordmark />
+          <p className="mt-4 max-w-sm text-[15px] text-muted-foreground">
+            Sitzungsnotizen und Berichte an den Gutachter, lokal auf Ihrem Computer. Theralo ist ein
+            Dokumentationswerkzeug; fachliche Verantwortung und Unterschrift liegen bei Ihnen.
+          </p>
+        </div>
+        <nav aria-label="Seite" className="md:col-span-3 md:col-start-7">
+          <p className="text-sm font-semibold">Produkt</p>
+          <ul className="mt-4 grid gap-2.5 text-[15px] text-muted-foreground">
+            {NAV.map((n) => (
+              <li key={n.href}>
+                <a href={n.href} className="hover:text-foreground">
+                  {n.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="md:col-span-3">
+          <p className="text-sm font-semibold">Theralo</p>
+          <ul className="mt-4 grid gap-2.5 text-[15px] text-muted-foreground">
+            <li>
+              <a href={DOWNLOAD_URL} className="hover:text-foreground">
                 Für Windows herunterladen
               </a>
-            </p>
-          </div>
-          <div className="t-small">
-            <p className="medium">Theralo · Version {VERSION}</p>
-            <p className="mt-2">
-              <a href={REPO_URL} className="link">
-                Quellcode auf GitHub
-              </a>
-            </p>
-            <p className="mt-1">
-              <a href={RELEASES_URL} className="link">
+            </li>
+            <li>
+              <a href={RELEASES_URL} className="hover:text-foreground">
                 Alle Versionen
               </a>
-            </p>
-          </div>
+            </li>
+            <li>
+              <a href={REPO_URL} className="hover:text-foreground">
+                Quellcode auf GitHub
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-foreground">
+                {CONTACT_EMAIL}
+              </a>
+            </li>
+          </ul>
         </div>
-        <div className="t-small muted mt-auto pt-16">
-          <p>
-            Theralo ist ein Dokumentationswerkzeug. Fachliche Verantwortung und Unterschrift liegen bei der Therapeutin
-            bzw. dem Therapeuten.
-          </p>
-          <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1">
-            <a href="/impressum" className="link">
-              Impressum
-            </a>
-            <a href="/datenschutz" className="link">
-              Datenschutzerklärung
-            </a>
-            <span>Fotos: Logan Adermatt, David Mao (Unsplash)</span>
-          </p>
-        </div>
-      </div>
+      </Container>
+      <Separator />
+      <Container className="flex flex-col gap-3 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <p>Theralo · Version {VERSION}</p>
+        <p className="flex gap-6">
+          <a href="/impressum" className="hover:text-foreground">
+            Impressum
+          </a>
+          <a href="/datenschutz" className="hover:text-foreground">
+            Datenschutzerklärung
+          </a>
+        </p>
+      </Container>
     </footer>
   )
 }
