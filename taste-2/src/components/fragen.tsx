@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { DOWNLOAD_SIZE, REPO_URL } from '@/lib/site'
+import { DOWNLOAD_SIZE } from '@/lib/site'
 import { Section } from './section'
 
 const link = 'font-medium text-primary underline underline-offset-4'
@@ -24,16 +24,7 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
   {
     q: 'Warum warnt Windows beim Installieren?',
-    a: (
-      <>
-        Die Installationsdatei ist noch nicht digital signiert. Klicken Sie bei „Der Computer wurde durch Windows
-        geschützt“ auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Den Quellcode finden Sie öffentlich auf{' '}
-        <a href={REPO_URL} className={link}>
-          GitHub
-        </a>
-        .
-      </>
-    ),
+    a: 'Die Installationsdatei ist noch nicht digital signiert. Klicken Sie bei „Der Computer wurde durch Windows geschützt“ auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“.',
   },
   {
     q: 'Was braucht mein Computer?',

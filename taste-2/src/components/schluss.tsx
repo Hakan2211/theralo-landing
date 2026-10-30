@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { CONTACT_EMAIL, DOWNLOAD_SIZE, DOWNLOAD_URL, RELEASES_URL, REPO_URL, VERSION } from '@/lib/site'
+import { CONTACT_EMAIL, DOWNLOAD_SIZE, DOWNLOAD_URL, VERSION } from '@/lib/site'
 import { BrowserFrame } from './browser-frame'
 import { WindowsMark } from './icons'
 import { NAV, Wordmark } from './nav'
@@ -75,16 +75,6 @@ export function Footer() {
             <li>
               <a href={DOWNLOAD_URL} className="hover:text-foreground">
                 Für Windows herunterladen
-              </a>
-            </li>
-            <li>
-              <a href={RELEASES_URL} className="hover:text-foreground">
-                Alle Versionen
-              </a>
-            </li>
-            <li>
-              <a href={REPO_URL} className="hover:text-foreground">
-                Quellcode auf GitHub
               </a>
             </li>
             <li>
