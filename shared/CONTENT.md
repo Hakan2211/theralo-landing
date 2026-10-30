@@ -78,7 +78,7 @@ Drei Bestandteile:
 3. **Individualisierung.** Neue Funktionen und Anpassungen für Ihre Abläufe, auf Wunsch für Ihre Praxis gebaut.
 
 Abschluss: **Kontaktieren Sie uns für Preisgestaltung und Kostenvoranschlag.**
-Knopf: **Angebot anfragen** (mailto `kontakt@theralo.app`, Betreff „Kostenvoranschlag Theralo“; Text: Praxisname, Anzahl Therapeut:innen, Wünsche). Zweiter Weg: **Kostenlos testen** (Download).
+Knopf: **Angebot anfragen** (mailto `hbilgic777@gmail.com`, Betreff „Kostenvoranschlag Theralo“; Text: Praxisname, Anzahl Therapeut:innen, Wünsche). Zweiter Weg: **Kostenlos testen** (Download).
 Hinweis klein: Die E-Mail-Adresse ist vorläufig, bis das Postfach eingerichtet ist.
 
 ## FAQ

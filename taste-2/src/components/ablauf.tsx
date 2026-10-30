@@ -33,7 +33,7 @@ const STEPS = [
     id: 'bericht',
     title: 'Zum Bericht mit dem Lotsen',
     short: 'Erst-, Umwandlungs- und Fortführungsantrag nach Muster PTV 3.',
-    points: ['Theralo zählt das Kontingent und erinnert rechtzeitig', 'Export als PDF oder Word'],
+    points: [],
     shot: 'board',
     alt: 'Theralo, Berichte als Board mit Fristen und dem Status „Bereit zur Prüfung“',
   },

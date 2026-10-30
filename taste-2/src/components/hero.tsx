@@ -1,7 +1,6 @@
 import { Clock, Lock, MessageSquareQuote, PenLine, PlayCircle, ShieldCheck, UserCheck } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { DOWNLOAD_SIZE, DOWNLOAD_URL, VERSION } from '@/lib/site'
+import { DOWNLOAD_URL } from '@/lib/site'
 import { BrowserFrame } from './browser-frame'
 import { WindowsMark } from './icons'
 import { Container } from './section'
@@ -22,11 +21,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-x-0 top-[38%] -z-10 mx-auto h-[640px] max-w-5xl rounded-full bg-primary/12 blur-3xl"
       />
       <Container className="text-center">
-        <Badge variant="outline" className="rise mx-auto h-8 gap-2 rounded-full bg-card px-3.5 text-sm font-medium text-muted-foreground">
-          <span className="size-1.5 rounded-full bg-primary" />
-          Für Psychotherapeut:innen · Windows 10/11
-        </Badge>
-        <h1 className="t-display rise mx-auto mt-6 max-w-[19ch]">Dokumentation, die in der Praxis bleibt.</h1>
+        <h1 className="t-display rise mx-auto max-w-[19ch]">Dokumentation, die in der Praxis bleibt.</h1>
         <p className="t-lead rise mx-auto mt-6 max-w-[46ch]">
           Theralo schreibt Sitzungsnotizen und Berichte an den Gutachter mit Ihnen, aus Ihren Sitzungen. Alles bleibt
           verschlüsselt auf Ihrem Computer.
@@ -43,9 +38,6 @@ export function Hero() {
             </a>
           </Button>
         </div>
-        <p className="mt-4 text-sm text-muted-foreground">
-          Kostenlos testen · Version {VERSION} · {DOWNLOAD_SIZE}
-        </p>
         <ul className="mx-auto mt-10 flex max-w-4xl flex-col items-center justify-center gap-x-8 gap-y-3 text-[15px] text-foreground/80 lg:flex-row">
           {TRUST.map(({ icon: Icon, text }) => (
             <li key={text} className="flex items-center gap-2 lg:whitespace-nowrap">
