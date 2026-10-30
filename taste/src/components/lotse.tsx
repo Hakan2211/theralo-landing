@@ -43,7 +43,7 @@ export function Lotse() {
   const [active, setActive] = useState(0)
   const part = PARTS[active]
   return (
-    <section id="lotse" className="frame scroll-mt-4 pt-[clamp(120px,14vw,200px)]" aria-labelledby="lotse-h">
+    <section id="lotse" className="frame scroll-mt-20 pt-[clamp(120px,14vw,200px)]" aria-labelledby="lotse-h">
       <div className="grid items-end gap-10 md:grid-cols-12">
         {/* The plate: the folder shape in the accent colour, the crop standing on it. */}
         <div data-rise className="order-1 min-w-0 md:order-2 md:col-span-7 md:col-start-6">
@@ -53,7 +53,7 @@ export function Lotse() {
               <img
                 key={p.name}
                 src={p.img}
-                alt={i === active ? `Ausschnitt aus thera: ${p.name}` : ''}
+                alt={i === active ? `Ausschnitt aus Theralo: ${p.name}` : ''}
                 aria-hidden={i !== active}
                 width={p.w}
                 height={p.h}

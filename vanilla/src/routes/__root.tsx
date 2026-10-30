@@ -9,14 +9,19 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'thera: Dokumentation, die in der Praxis bleibt' },
+      { title: 'Theralo: Dokumentation, die in der Praxis bleibt' },
       {
         name: 'description',
         content:
           'Sitzungsnotizen und Berichte an den Gutachter (PTV 3) mit KI-Unterstützung. Lokal verschlüsselt, pseudonymisiert vor jeder KI-Anfrage. Für Windows.',
       },
+      { property: 'og:title', content: 'Theralo' },
+      { property: 'og:url', content: 'https://theralo.app' },
+      { property: 'og:image', content: 'https://theralo.app/screens/lotse.png' },
+      { property: 'og:locale', content: 'de_DE' },
     ],
     links: [
+      { rel: 'canonical', href: 'https://theralo.app' },
       { rel: 'stylesheet', href: appCss },
       { rel: 'icon', type: 'image/png', href: '/icon.png' },
     ],
@@ -51,7 +56,7 @@ function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link to="/" className="flex items-center gap-2.5">
           <img src="/icon.png" alt="" className="size-7 rounded-md" />
-          <span className="font-serif text-2xl leading-none">thera</span>
+          <span className="font-serif text-2xl leading-none">Theralo</span>
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-ink-soft md:flex">
           <a href="/#funktionen" className="hover:text-ink">Funktionen</a>
@@ -76,11 +81,11 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 text-sm text-ink-soft md:flex-row md:items-start md:justify-between">
         <div className="max-w-md space-y-2">
           <p className="flex items-center gap-2 text-ink">
-            <span className="font-serif text-xl">thera</span>
+            <span className="font-serif text-xl">Theralo</span>
             <span>· Version {VERSION}</span>
           </p>
           <p>
-            thera ist ein Dokumentationswerkzeug. Fachliche Verantwortung und Unterschrift liegen bei der
+            Theralo ist ein Dokumentationswerkzeug. Fachliche Verantwortung und Unterschrift liegen bei der
             Therapeutin bzw. dem Therapeuten.
           </p>
         </div>

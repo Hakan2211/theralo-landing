@@ -47,7 +47,7 @@ export function Verdichten() {
           <br /> ein Bericht
         </h2>
         <p data-rise style={{ '--i': 1 } as never} className="text-body leading-relaxed md:col-span-5 md:col-start-8 md:self-end">
-          Ein Umwandlungsantrag fasst zwölf Sitzungen zusammen. thera sammelt dafür, was Sie Woche für Woche bestätigt
+          Ein Umwandlungsantrag fasst zwölf Sitzungen zusammen. Theralo sammelt dafür, was Sie Woche für Woche bestätigt
           haben.
         </p>
       </div>

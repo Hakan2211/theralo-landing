@@ -1,11 +1,11 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/datenschutz')({
-  head: () => ({ meta: [{ title: 'Datenschutzerklärung · thera' }, { name: 'robots', content: 'noindex' }] }),
+  head: () => ({ meta: [{ title: 'Datenschutzerklärung · Theralo' }, { name: 'robots', content: 'noindex' }] }),
   component: () => (
     <main className="frame min-h-[70vh] py-16">
       <Link to="/" className="font-serif text-lead">
-        thera
+        Theralo
       </Link>
       <h1 className="mt-16 font-serif text-head">Datenschutzerklärung</h1>
       {/* TODO: Angaben des Betreibers. */}

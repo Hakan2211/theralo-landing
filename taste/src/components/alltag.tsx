@@ -31,7 +31,7 @@ export function Alltag() {
           <h2 id="alltag-h" className="font-serif text-head leading-[1.02] tracking-[-0.02em]">
             Im Praxisalltag
           </h2>
-          <p className="max-w-[44ch] text-body">Was thera zwischen den Sitzungen für Sie im Blick behält.</p>
+          <p className="max-w-[44ch] text-body">Was Theralo zwischen den Sitzungen für Sie im Blick behält.</p>
         </div>
 
         <Tile i={1} area="a" bg="var(--color-night)" fg="var(--color-night-ink)" name="Autopilot nach der Sitzung" line="Abschrift, Notiz, Fakten und Zusammenfassung laufen im Hintergrund.">
@@ -43,7 +43,7 @@ export function Alltag() {
           </div>
         </Tile>
 
-        <Tile i={2} area="b" bg="var(--color-tile)" name="Kontingent im Blick" line="thera zählt die Sitzungen und erinnert rechtzeitig an den Umwandlungs- oder Fortführungsantrag.">
+        <Tile i={2} area="b" bg="var(--color-tile)" name="Kontingent im Blick" line="Theralo zählt die Sitzungen und erinnert rechtzeitig an den Umwandlungs- oder Fortführungsantrag.">
           <div className="left-[0.4em] top-[0.35em] text-[56px] min-[900px]:text-[96px]" style={{ position: 'absolute', whiteSpace: 'nowrap' }}>
             <span className="font-semibold tabular-nums">10 von 12</span>
             <span className="mt-[0.25em] flex h-[0.32em] w-[7em] bg-tile">

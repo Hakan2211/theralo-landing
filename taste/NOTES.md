@@ -4,14 +4,14 @@ Inhalte: `../shared/CONTENT.md` (dieselben wie Variante A). Diese Datei hält di
 
 ## 1. Brief
 
-- Thema: thera, Windows-Desktop-App für niedergelassene Psychotherapeut:innen (GKV). Sitzung → Notiz → Bericht an den Gutachter (Muster PTV 3).
+- Thema: Theralo, Windows-Desktop-App für niedergelassene Psychotherapeut:innen (GKV). Sitzung → Notiz → Bericht an den Gutachter (Muster PTV 3).
 - Publikum: Therapeut:innen, die Berichte abends und am Wochenende schreiben; skeptisch gegenüber KI und Cloud wegen § 203 StGB.
 - Die eine Handlung: **Für Windows herunterladen** (GitHub-Release-Link). Zweitens: Video ansehen.
 - Stack: TanStack Start, Tailwind v4, statisch vorgerendert, Vercel.
 - Marke: Papier #f7f6f2, Tinte #23272b, Petrol #337875, Inter + Libertinus Serif (aus der App; die Screenshots tragen sie).
 - Bilder, die es wirklich gibt: 8 echte Screenshots der Demo-Praxis (2×), ein 4:50-Video (MP4, Demo-Praxis), App-Icon. Kein Foto, kein Bildgenerator.
 
-### Inventar (gehört thera, keinem Mitbewerber)
+### Inventar (gehört Theralo, keinem Mitbewerber)
 
 1. Das Muster **PTV 3** selbst: „Bericht an die Gutachterin / den Gutachter“, sieben nummerierte Abschnitte (Relevante soziodemographische Daten … Zusätzlich erforderliche Angaben bei einem Umwandlungsantrag).
 2. Die **Chiffre** (S140391): der Bericht trägt nur die Chiffre, nie den Namen. Pseudonym als Ritual des Fachs.
@@ -30,7 +30,7 @@ Inhalte: `../shared/CONTENT.md` (dieselben wie Variante A). Diese Datei hält di
 
 | # | Behauptung | Beweis |
 |---|---|---|
-| Hero | thera schreibt den Bericht an den Gutachter mit, und alles bleibt auf Ihrem Rechner. | Der Bericht-Lotse, groß, echt; Download-Knopf |
+| Hero | Theralo schreibt den Bericht an den Gutachter mit, und alles bleibt auf Ihrem Rechner. | Der Bericht-Lotse, groß, echt; Download-Knopf |
 | 2 | Aus der Sitzung wird eine Notiz, aus Notizen ein Bericht. | Drei echte Bildschirme in Reihenfolge: Notiz mit Zeitmarken → Lotse → Gutachter-Check |
 | 3 | Jeder Satz hat eine Quelle, Sie entscheiden Satz für Satz. | „Woher kommt das?“ als Ausschnitt; das Satz-für-Satz-Ding (live) |
 | 4 | Die Schweigepflicht bleibt gewahrt. | Der gesendete Text, pseudonymisiert; Liste „Nie an die KI“ |
@@ -38,7 +38,7 @@ Inhalte: `../shared/CONTENT.md` (dieselben wie Variante A). Diese Datei hält di
 | 6 | So sieht es in 5 Minuten aus. | Das Video |
 | 7 | In vier Schritten startklar, ohne Konto. | Installationsschritte, Voraussetzungen, Download |
 | 8 | Offene Fragen. | FAQ (6 echte Fragen) |
-| Fuß | thera, Version, Quellcode, Impressum. | – |
+| Fuß | Theralo, Version, Quellcode, Impressum. | – |
 
 ## 3. Richtung
 
@@ -66,3 +66,10 @@ Mitbewerber-Test: Cloud-Dokumentationssoftware kann „was hinausgeht, trägt ei
 - Animationen nach `review-animations`: Platzhalter-Reiter blenden nur neu erscheinende ein (keine Animation pro Tastendruck), reduzierte Bewegung behält Deckkraft und lässt Bewegung weg. Offener Punkt: das Akkordeon animiert `flex-grow` (Layout), wie der Bogen es verlangt; selten geklickt, bei reduzierter Bewegung aus.
 - Bilder: 8 echte Screenshots der Demo-Praxis + Ausschnitte daraus + das Video. Keine gefundenen Archivbilder, keine Stimmungsfotos.
 - Muster-/Platzhalterinhalte vor dem Start: Impressum und Datenschutzerklärung.
+
+## Runde 2 (30.10.2026): Theralo, Menü, Preisgestaltung
+
+- Name überall Theralo; Fußzeilen-Wortmarke aus sieben Blöcken.
+- Menüleiste (`site-nav.tsx`): klebt oben, Wortmarke links, Abschnitte, Download rechts; auf dem Telefon ein Blatt unter der Leiste (Esc schließt, Fokus zurück, `visibility:hidden` im geschlossenen Zustand).
+- Preisgestaltung (`preise.tsx`): drei Akten ohne Beschriftung am Reiter (der Reiter trägt nie einen Namen), dazu „Preis auf Anfrage“ mit mailto-Knopf. Keine Preise.
+- Gate: `lint.mjs` 0 FAIL/0 WARN; `inspect.mjs` 0 FAIL, 2 WARN (palette-cream wie zuvor; ragged-edges durch die zweispaltigen Kopfzeilen, vertretbar).

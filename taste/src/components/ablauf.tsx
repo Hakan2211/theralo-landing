@@ -12,7 +12,7 @@ const STAGES = [
   },
   {
     name: 'Autopilot',
-    text: 'Sie prüfen die Abschrift und bestätigen; das Audio wird gelöscht. Dann legt thera die Notiz an und schlägt Fakten vor, jeden mit der Zeitmarke im Gespräch.',
+    text: 'Sie prüfen die Abschrift und bestätigen; das Audio wird gelöscht. Dann legt Theralo die Notiz an und schlägt Fakten vor, jeden mit der Zeitmarke im Gespräch.',
     img: '/screens/notiz.png',
     alt: 'Sitzungsnotiz mit KI-Vorschlägen aus der Abschrift, Zeitmarke 00:12 und Bericht-Abschnitt',
     bg: 'var(--color-p2)',
@@ -47,14 +47,14 @@ const STAGES = [
 export function Ablauf() {
   const [open, setOpen] = useState(0)
   return (
-    <section id="ablauf" className="frame scroll-mt-4 pt-[clamp(120px,14vw,200px)]" aria-labelledby="ablauf-h">
+    <section id="ablauf" className="frame scroll-mt-20 pt-[clamp(120px,14vw,200px)]" aria-labelledby="ablauf-h">
       <div className="grid gap-6 md:grid-cols-12">
         <h2 id="ablauf-h" data-rise className="font-serif text-head leading-[1.02] tracking-[-0.02em] md:col-span-5">
           Von der Sitzung zum Bericht
         </h2>
         <p data-rise style={{ '--i': 1 } as never} className="text-lead leading-relaxed md:col-span-5 md:col-start-7">
           Berichte an den Gutachter entstehen abends und am Wochenende, obwohl ihr Inhalt längst in den Sitzungen steht.
-          thera nimmt die Routine dazwischen ab. Jede Entscheidung bleibt bei Ihnen.
+          Theralo nimmt die Routine dazwischen ab. Jede Entscheidung bleibt bei Ihnen.
         </p>
       </div>
 

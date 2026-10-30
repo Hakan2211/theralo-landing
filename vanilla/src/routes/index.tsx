@@ -104,7 +104,7 @@ const STEPS = [
   },
   {
     title: 'Abschrift prüfen',
-    text: 'thera trennt die Sprecher. Sie korrigieren und bestätigen. Danach wird das Audio gelöscht.',
+    text: 'Theralo trennt die Sprecher. Sie korrigieren und bestätigen. Danach wird das Audio gelöscht.',
   },
   {
     title: 'Der Autopilot schreibt vor',
@@ -121,7 +121,7 @@ function Steps() {
     <section className="border-y border-line bg-white py-20">
       <div className="mx-auto max-w-6xl px-5">
         <SectionTitle eyebrow="So funktioniert's" title="Von der Sitzung zum Bericht">
-          Berichte an den Gutachter kosten Abende und Wochenenden. Die Inhalte stehen längst in den Sitzungen. thera
+          Berichte an den Gutachter kosten Abende und Wochenenden. Die Inhalte stehen längst in den Sitzungen. Theralo
           nimmt Ihnen die Routine ab und lässt Ihnen jede Entscheidung.
         </SectionTitle>
         <ol className="grid gap-6 md:grid-cols-4">
@@ -162,7 +162,7 @@ const SHOWCASE = [
 ]
 
 const MORE = [
-  ['Kontingent im Blick', 'thera zählt die Sitzungen und erinnert rechtzeitig an Umwandlungs- und Fortführungsanträge.'],
+  ['Kontingent im Blick', 'Theralo zählt die Sitzungen und erinnert rechtzeitig an Umwandlungs- und Fortführungsanträge.'],
   ['Heute, Kalender, Verlauf', 'Termine und Serien, Aufgaben und fällige Abschriften auf einen Blick. Der Verlauf zeigt jede Sitzung kurz zusammengefasst.'],
   ['Diktat überall', 'Live-Diktat, lokal auf Ihrem Computer.'],
   ['Assistent', 'Beantwortet Fragen zu Terminen und Behandlungen und macht nur Vorschläge, die Sie bestätigen.'],
@@ -243,7 +243,7 @@ function Privacy() {
 function Video() {
   return (
     <section id="video" className="mx-auto max-w-5xl scroll-mt-20 px-5 py-24">
-      <SectionTitle eyebrow="Video" title="thera in 5 Minuten">
+      <SectionTitle eyebrow="Video" title="Theralo in 5 Minuten">
         Ein Rundgang durch die Demo-Praxis, von der Aufnahme bis zum fertigen Bericht. Alle Personen sind erfunden.
       </SectionTitle>
       <video
@@ -259,11 +259,11 @@ function Video() {
 }
 
 const INSTALL = [
-  ['Herunterladen', <>Die Datei <code className="rounded bg-ink/5 px-1">thera-setup-x64.exe</code> (etwa {DOWNLOAD_SIZE}).</>],
+  ['Herunterladen', <>Die Datei <code className="rounded bg-ink/5 px-1">Theralo-setup-x64.exe</code> (etwa {DOWNLOAD_SIZE}).</>],
   [
     'Starten',
     <>
-      Windows zeigt möglicherweise „Der Computer wurde durch Windows geschützt“, weil thera noch nicht signiert ist. Klicken
+      Windows zeigt möglicherweise „Der Computer wurde durch Windows geschützt“, weil Theralo noch nicht signiert ist. Klicken
       Sie auf <strong>Weitere Informationen</strong> und dann auf <strong>Trotzdem ausführen</strong>.
     </>,
   ],
@@ -316,7 +316,7 @@ function Install() {
 const FAQ = [
   [
     'Was kostet die KI-Nutzung?',
-    'Die KI-Nutzung zahlen Sie direkt beim Anbieter Ihrer Wahl, oft wenige Cent pro Notiz. thera zeigt die Kosten nach Aufgabe und Modell. Mit einem lokalen Modell fallen keine KI-Kosten an.',
+    'Die KI-Nutzung zahlen Sie direkt beim Anbieter Ihrer Wahl, oft wenige Cent pro Notiz. Theralo zeigt die Kosten nach Aufgabe und Modell. Mit einem lokalen Modell fallen keine KI-Kosten an.',
   ],
   [
     'Brauche ich Internet?',
@@ -327,7 +327,7 @@ const FAQ = [
     'Sie schlägt Sätze vor, jeweils mit Quelle aus Ihren Notizen. Sie übernehmen, ändern oder verwerfen jeden Satz einzeln. Diagnosen und Medikation trägt sie nie ein, und unterschreiben tun nur Sie.',
   ],
   ['Was passiert mit den Aufnahmen?', 'Sie werden verschlüsselt gespeichert und gelöscht, sobald Sie die Abschrift bestätigen.'],
-  ['Gibt es thera für Mac?', 'Derzeit nur für Windows.'],
+  ['Gibt es Theralo für Mac?', 'Derzeit nur für Windows.'],
   [
     'Warum warnt Windows beim Installieren?',
     'Die Installationsdatei ist noch nicht digital signiert. Den Quellcode finden Sie öffentlich auf GitHub.',
@@ -357,7 +357,7 @@ function FinalCta() {
   return (
     <section className="px-5 pb-24">
       <div className="mx-auto max-w-6xl rounded-2xl bg-teal px-6 py-16 text-center text-white">
-        <h2 className="font-serif text-4xl md:text-5xl">Probieren Sie thera in der Demo-Praxis aus.</h2>
+        <h2 className="font-serif text-4xl md:text-5xl">Probieren Sie Theralo in der Demo-Praxis aus.</h2>
         <p className="mx-auto mt-4 max-w-xl text-white/80">Erfundene Beispieldaten, getrennt von Ihren echten Daten. Kein Konto nötig.</p>
         <a
           href={DOWNLOAD_URL}

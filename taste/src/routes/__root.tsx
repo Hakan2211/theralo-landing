@@ -8,15 +8,20 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'thera: Sitzungsnotizen und Berichte an den Gutachter, lokal auf Ihrem Computer' },
+      { title: 'Theralo: Sitzungsnotizen und Berichte an den Gutachter, lokal auf Ihrem Computer' },
       {
         name: 'description',
         content:
-          'thera schreibt Sitzungsnotizen und Berichte nach Muster PTV 3 mit Ihnen, aus Ihren Sitzungen. Verschlüsselt auf Ihrem Computer, pseudonymisiert vor jeder KI-Anfrage. Für Windows.',
+          'Theralo schreibt Sitzungsnotizen und Berichte nach Muster PTV 3 mit Ihnen, aus Ihren Sitzungen. Verschlüsselt auf Ihrem Computer, pseudonymisiert vor jeder KI-Anfrage. Für Windows.',
       },
       { name: 'theme-color', content: '#191814' },
+      { property: 'og:title', content: 'Theralo' },
+      { property: 'og:url', content: 'https://theralo.app' },
+      { property: 'og:image', content: 'https://theralo.app/screens/lotse.png' },
+      { property: 'og:locale', content: 'de_DE' },
     ],
     links: [
+      { rel: 'canonical', href: 'https://theralo.app' },
       { rel: 'stylesheet', href: appCss },
       { rel: 'icon', type: 'image/png', href: '/icon.png' },
     ],

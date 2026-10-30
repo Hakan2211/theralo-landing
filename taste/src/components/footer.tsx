@@ -8,20 +8,23 @@ const BLOCKS = [
   { ch: 'e', h: 0.64, bg: 'var(--color-p3)' },
   { ch: 'r', h: 0.86, bg: 'var(--color-p4)' },
   { ch: 'a', h: 0.7, bg: 'var(--color-p5)' },
+  { ch: 'l', h: 0.94, bg: 'var(--color-p3)' },
+  { ch: 'o', h: 0.6, bg: 'var(--color-p1)' },
 ]
+const W = 1000 / BLOCKS.length
 
 export function Footer() {
   return (
     <footer className="mt-[clamp(96px,10vw,160px)] bg-p6 pt-[clamp(32px,4vw,56px)] pb-8">
       <div className="frame">
-        <svg viewBox="0 0 1000 300" className="block h-auto w-full" role="img" aria-label="thera">
+        <svg viewBox="0 0 1000 300" className="block h-auto w-full" role="img" aria-label="Theralo">
           {BLOCKS.map((b, i) => {
             const h = 300 * b.h
-            const x = i * 200 + (i ? 2 : 0)
+            const x = i * W + (i ? 2 : 0)
             return (
-              <g key={b.ch}>
-                <rect x={x} y={300 - h} width={i === BLOCKS.length - 1 ? 200 - 2 : 200 - (i ? 4 : 2)} height={h} fill={b.bg} />
-                <text x={x + 98} y={300 - h / 2 + 52} textAnchor="middle" fontFamily="Libertinus Serif, Georgia, serif" fontSize="170" fill="var(--color-p6)">
+              <g key={i}>
+                <rect x={x} y={300 - h} width={i === BLOCKS.length - 1 ? W - 2 : W - (i ? 4 : 2)} height={h} fill={b.bg} />
+                <text x={x + W / 2 - 2} y={300 - h / 2 + 46} textAnchor="middle" fontFamily="Libertinus Serif, Georgia, serif" fontSize="150" fill="var(--color-p6)">
                   {b.ch}
                 </text>
               </g>
@@ -35,6 +38,7 @@ export function Footer() {
               <li><a href="#ablauf" className="hover:underline">Ablauf</a></li>
               <li><a href="#lotse" className="hover:underline">Bericht-Lotse</a></li>
               <li><a href="#schweigepflicht" className="hover:underline">Schweigepflicht</a></li>
+              <li><a href="#preise" className="hover:underline">Preise</a></li>
               <li><a href="#fragen" className="hover:underline">Fragen</a></li>
             </ul>
           </nav>
@@ -52,13 +56,13 @@ export function Footer() {
             </ul>
           </nav>
           <p className="col-span-2 max-w-[44ch] leading-relaxed md:col-span-4 md:col-start-9">
-            thera ist ein Dokumentationswerkzeug. Fachliche Verantwortung und Unterschrift liegen bei der Therapeutin bzw.
+            Theralo ist ein Dokumentationswerkzeug. Fachliche Verantwortung und Unterschrift liegen bei der Therapeutin bzw.
             dem Therapeuten.
           </p>
         </div>
 
         <div className="mt-12 flex items-center justify-between gap-4 text-small">
-          <span>thera · Version {VERSION}</span>
+          <span>Theralo · Version {VERSION}</span>
           <a href={DOWNLOAD_URL} className="btn btn-ink min-h-10 px-4 py-2 text-small">
             Herunterladen
           </a>

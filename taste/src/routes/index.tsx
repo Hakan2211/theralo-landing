@@ -5,7 +5,9 @@ import { Footer } from '@/components/footer'
 import { Fragen } from '@/components/fragen'
 import { Hero } from '@/components/hero'
 import { Lotse } from '@/components/lotse'
+import { Preise } from '@/components/preise'
 import { Schweigepflicht } from '@/components/schweigepflicht'
+import { SiteNav } from '@/components/site-nav'
 import { Verdichten } from '@/components/verdichten'
 import { useReveal } from '@/lib/reveal'
 
@@ -15,6 +17,7 @@ function Home() {
   useReveal()
   return (
     <>
+      <SiteNav />
       <Hero />
       <main>
         <Ablauf />
@@ -22,6 +25,7 @@ function Home() {
         <Verdichten />
         <Schweigepflicht />
         <Alltag />
+        <Preise />
         <Fragen />
       </main>
       <Footer />

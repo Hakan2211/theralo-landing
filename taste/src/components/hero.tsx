@@ -11,18 +11,9 @@ const FOLDERS = [
 export function Hero() {
   return (
     <header className="relative overflow-hidden bg-night text-night-ink">
-      <nav className="frame relative flex h-16 items-center justify-center" aria-label="Hauptnavigation">
-        <a href="/" className="font-serif text-lead leading-none text-night-ink">
-          thera
-        </a>
-        <a href={DOWNLOAD_URL} className="link absolute right-[var(--margin)] text-small text-night-ink">
-          Herunterladen
-        </a>
-      </nav>
-
       <div className="frame pt-[clamp(32px,5vw,96px)] text-center">
         <h1 className="hero-line font-serif text-display leading-[0.86] tracking-[-0.03em]" style={{ '--i': 0 } as never}>
-          thera
+          Theralo
         </h1>
         <p className="hero-line mx-auto mt-6 max-w-[46ch] font-serif text-lead leading-snug text-night-ink md:text-lead" style={{ '--i': 1 } as never}>
           Sitzungsnotizen und Berichte an den Gutachter, aus Ihren Sitzungen geschrieben. Alles bleibt verschlüsselt auf
@@ -64,7 +55,7 @@ export function Hero() {
                 </a>
               </p>
             </div>
-            <figure id="film" className="mt-[clamp(24px,3vw,40px)] scroll-mt-6">
+            <figure id="film" className="mt-[clamp(24px,3vw,40px)] scroll-mt-20">
               <video
                 controls
                 preload="metadata"
@@ -72,12 +63,12 @@ export function Hero() {
                 width={2560}
                 height={1600}
                 className="block aspect-[16/10] w-full bg-night object-cover"
-                aria-label="Film: thera in 5 Minuten"
+                aria-label="Film: Theralo in 5 Minuten"
               >
                 <source src={VIDEO_URL} type="video/mp4" />
               </video>
               <figcaption className="mt-3 text-small text-muted">
-                thera in 5 Minuten: ein Rundgang durch die Demo-Praxis, von der Aufnahme bis zum fertigen Bericht. Alle
+                Theralo in 5 Minuten: ein Rundgang durch die Demo-Praxis, von der Aufnahme bis zum fertigen Bericht. Alle
                 Personen sind erfunden.
               </figcaption>
             </figure>

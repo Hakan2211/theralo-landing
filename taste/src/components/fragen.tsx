@@ -3,16 +3,16 @@ import { DOWNLOAD_SIZE, DOWNLOAD_URL, RELEASES_URL } from '@/lib/site'
 
 const FAQ: [string, ReactNode][] = [
   [
-    'Wie installiere ich thera?',
+    'Wie installiere ich Theralo?',
     <ul className="tab-list space-y-2">
       <li>
         <a href={DOWNLOAD_URL} className="link">
-          thera-setup-x64.exe
+          Theralo-setup-x64.exe
         </a>{' '}
         herunterladen ({DOWNLOAD_SIZE}) und starten.
       </li>
       <li>
-        Windows zeigt vielleicht „Der Computer wurde durch Windows geschützt“, weil thera noch nicht signiert ist. Klicken
+        Windows zeigt vielleicht „Der Computer wurde durch Windows geschützt“, weil Theralo noch nicht signiert ist. Klicken
         Sie auf <strong>Weitere Informationen</strong> und dann auf <strong>Trotzdem ausführen</strong>.
       </li>
       <li>Beim ersten Start erhalten Sie Ihr Notfall-Kit. Drucken Sie es aus und bewahren Sie es sicher auf.</li>
@@ -24,13 +24,13 @@ const FAQ: [string, ReactNode][] = [
     <ul className="tab-list space-y-2">
       <li>Windows 10 oder 11, 64 Bit, und ein Mikrofon für Aufnahme und Diktat.</li>
       <li>Etwa 1 GB freien Speicher für das Sprachmodell, das Sie einmal in der App laden.</li>
-      <li>Für lokale KI-Entwürfe 32 GB RAM oder eine Grafikkarte mit genug Speicher; thera prüft das und empfiehlt ein Modell.</li>
+      <li>Für lokale KI-Entwürfe 32 GB RAM oder eine Grafikkarte mit genug Speicher; Theralo prüft das und empfiehlt ein Modell.</li>
       <li>Für Cloud-Entwürfe einen eigenen Schlüssel bei OpenRouter oder Requesty.</li>
     </ul>,
   ],
   [
-    'Was kostet die KI-Nutzung?',
-    'Sie zahlen direkt beim Anbieter Ihrer Wahl, oft wenige Cent pro Notiz. thera zeigt die Kosten nach Aufgabe und Modell. Mit einem lokalen Modell fallen keine KI-Kosten an.',
+    'Was kostet Theralo?',
+    'Theralo bieten wir Praxen, MVZ und Unternehmen an, mit einem Preis für Ihre Praxis. Schreiben Sie uns für einen Kostenvoranschlag (siehe Preisgestaltung). Zum Ausprobieren laden Sie Theralo kostenlos herunter.',
   ],
   [
     'Brauche ich Internet?',
@@ -51,12 +51,12 @@ const FAQ: [string, ReactNode][] = [
       .
     </>,
   ],
-  ['Gibt es thera für Mac?', 'Derzeit nur für Windows.'],
+  ['Gibt es Theralo für Mac?', 'Derzeit nur für Windows.'],
 ]
 
 export function Fragen() {
   return (
-    <section id="fragen" className="frame scroll-mt-4 pt-[clamp(120px,14vw,200px)]" aria-labelledby="fragen-h">
+    <section id="fragen" className="frame scroll-mt-20 pt-[clamp(120px,14vw,200px)]" aria-labelledby="fragen-h">
       <div className="grid gap-8 md:grid-cols-12">
         <h2 id="fragen-h" data-rise className="font-serif text-head leading-[1.02] tracking-[-0.02em] md:sticky md:top-24 md:col-span-4 md:self-start ">
           Fragen

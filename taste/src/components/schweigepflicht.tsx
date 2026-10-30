@@ -14,14 +14,14 @@ const MARKS = [
 
 export function Schweigepflicht() {
   return (
-    <section id="schweigepflicht" className="frame scroll-mt-4 pt-[clamp(120px,14vw,200px)]" aria-labelledby="sp-h">
+    <section id="schweigepflicht" className="frame scroll-mt-20 pt-[clamp(120px,14vw,200px)]" aria-labelledby="sp-h">
       <div className="grid grid-cols-2 gap-[6px] md:gap-2 lg:grid-cols-4">
         <div data-rise className="col-span-2 flex flex-col justify-between gap-6 bg-p2 p-6 text-white md:p-8 lg:aspect-[3/1]">
           <h2 id="sp-h" className="font-serif text-head leading-[1.02] tracking-[-0.02em]">
             Schweigepflicht eingebaut
           </h2>
           <p className="max-w-[44ch] text-body leading-relaxed">
-            thera ist so gebaut, dass Patientendaten den Computer nicht verlassen. Was zur KI geht, ist pseudonymisiert,
+            Theralo ist so gebaut, dass Patientendaten den Computer nicht verlassen. Was zur KI geht, ist pseudonymisiert,
             und Sie sehen danach genau, was gesendet wurde.
           </p>
         </div>
@@ -92,7 +92,7 @@ function Live() {
             )}
           </p>
           <p className="mt-6 text-small leading-snug text-night-muted">
-            Vereinfacht, im Browser. thera erkennt mehr und lernt eigene Begriffe je Person.
+            Vereinfacht, im Browser. Theralo erkennt mehr und lernt eigene Begriffe je Person.
           </p>
         </div>
       </div>
@@ -120,7 +120,7 @@ function Live() {
             Was die KI zu sehen bekommt
           </h3>
           <p className="mt-12 max-w-[34ch] text-body leading-relaxed">
-            Bevor ein Text an einen KI-Dienst geht, ersetzt thera Namen, Orte und Daten durch Platzhalter. Die Antwort
+            Bevor ein Text an einen KI-Dienst geht, ersetzt Theralo Namen, Orte und Daten durch Platzhalter. Die Antwort
             wird auf Ihrem Computer zurückübersetzt. Die Zuordnung verlässt ihn nie.
           </p>
         </div>

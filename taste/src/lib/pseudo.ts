@@ -1,4 +1,4 @@
-// A small in-browser imitation of thera's pseudonymizer for the live demo. The app works on its
+// A small in-browser imitation of Theralo's pseudonymizer for the live demo. The app works on its
 // own dictionary per person; this only knows a handful of names, places and date shapes.
 
 export type Piece = { text: string; tag?: string; kind?: 'person' | 'place' | 'date' | 'patient' }

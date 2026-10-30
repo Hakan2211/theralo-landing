@@ -265,3 +265,26 @@ details > summary::-webkit-details-marker {
       'e e e f f f g g g i i i';
   }
 }
+
+/* ---------- menu sheet (phones) ---------- */
+.nav-sheet {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 180ms var(--ease-out), transform 220ms var(--ease-out), visibility 0s linear 220ms;
+}
+.nav-sheet.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-sheet {
+    transform: none;
+    transition: opacity 160ms ease, visibility 0s linear 160ms;
+  }
+  .nav-sheet.is-open {
+    transition-delay: 0s;
+  }
+}
