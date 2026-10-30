@@ -5,8 +5,8 @@ dist
 .nitro
 .tanstack
 *.log
-public/screens
-public/icon.png
+**/public/screens
+**/public/icon.png
 .taste-skill
 compare
 .claude/skills
