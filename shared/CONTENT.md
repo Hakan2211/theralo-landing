@@ -8,7 +8,7 @@ Keine Versprechen, die das Produkt nicht hält: nicht „DSGVO-zertifiziert“, 
 
 - Download (Windows, immer die neueste Version): `https://github.com/Hakan2211/datorga/releases/latest/download/theralo-setup-x64.exe`
 - Alle Versionen / Quellcode: `https://github.com/Hakan2211/datorga/releases`, `https://github.com/Hakan2211/datorga`
-- Video „Theralo in 5 Minuten“: `https://memdia-cdn.b-cdn.net/thera-in-5-minuten.mp4` (1920 × 1080, etwa 4½ Minuten, gesprochen)
+- Video „Theralo in 5 Minuten“: `https://memdia-cdn.b-cdn.net/theralo-in-5-minuten.mp4` (1920 × 1080, etwa 4½ Minuten, gesprochen)
 - Version: 0.1.0 · Windows 10/11, 64 Bit
 
 ## Hero
