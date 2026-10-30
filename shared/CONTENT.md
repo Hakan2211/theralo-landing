@@ -16,7 +16,7 @@ Keine Versprechen, die das Produkt nicht hält: nicht „DSGVO-zertifiziert“, 
 - Name: **thera**
 - Claim: **Dokumentation, die in der Praxis bleibt.**
 - Unterzeile: Sitzungen aufnehmen, Notizen in Minuten statt Stunden und Berichte an den Gutachter Schritt für Schritt, mit KI-Unterstützung. Ihre Daten bleiben verschlüsselt auf Ihrem Computer.
-- Primäre Aktion: **Für Windows herunterladen** (Klein darunter: „Version 0.1.0 · Windows 10/11 · 74 MB“)
+- Primäre Aktion: **Für Windows herunterladen** (Klein darunter: „Version 0.1.0 · Windows 10/11 · 71 MB“)
 - Sekundäre Aktion: **Video ansehen (5 Min.)**
 - Vertrauenszeile: Lokal verschlüsselt (AES-256) · Pseudonymisiert vor jeder KI-Anfrage · Diagnosen trägt nur die Therapeutin bzw. der Therapeut ein
 
@@ -60,7 +60,7 @@ Text: Ein Rundgang durch die Demo-Praxis, von der Aufnahme bis zum fertigen Beri
 
 ## Installation
 
-1. **Herunterladen:** `thera-setup-x64.exe` (etwa 74 MB).
+1. **Herunterladen:** `thera-setup-x64.exe` (etwa 71 MB).
 2. **Starten.** Windows zeigt möglicherweise „Der Computer wurde durch Windows geschützt“, weil thera noch nicht signiert ist. Klicken Sie auf **Weitere Informationen** und dann auf **Trotzdem ausführen**.
 3. **Einrichten:** Beim ersten Start erhalten Sie Ihr Notfall-Kit. Drucken Sie es aus und bewahren Sie es sicher auf.
 4. **Ausprobieren:** „Mit Beispieldaten ausprobieren“ öffnet die Demo-Praxis.

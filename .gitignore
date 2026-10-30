@@ -7,3 +7,5 @@ dist
 *.log
 public/screens
 public/icon.png
+.taste-skill
+compare

@@ -1,0 +1,267 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource/libertinus-serif/400.css';
+@import '@fontsource/libertinus-serif/600.css';
+
+/* Brand values from the app (shared/CONTENT.md, "Marke"). One ground, one ink, one accent; the
+   petrol steps are the accordion's dark-to-light order and the folder stack. */
+@theme {
+  --color-paper: #f7f6f2;
+  --color-tile: #ece8df;
+  --color-ink: #23272b;
+  --color-muted: #474c52;
+  --color-accent: #337875;
+  --color-night: #191814;
+  --color-night-ink: #ece9e3;
+  --color-night-muted: #b3ada3;
+  --color-p1: #1d3432;
+  --color-p2: #245f5c;
+  --color-p3: #337875;
+  --color-p4: #6aa39e;
+  --color-p5: #b4d6d1;
+  --color-p6: #e3efee;
+  --font-sans: 'Inter Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-serif: 'Libertinus Serif', Georgia, serif;
+
+  /* Five type steps. */
+  --text-display: clamp(96px, 15vw, 220px);
+  --text-head: clamp(36px, 4vw, 60px);
+  --text-lead: 22px;
+  --text-body: 17px;
+  --text-small: 15px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+:root {
+  --margin: clamp(20px, 4vw, 56px);
+  /* The motif: the tab of a case file. Its slant is the one corner on the page. */
+  --slant: 14px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+  font-size: var(--text-body);
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+.frame {
+  padding-inline: var(--margin);
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+/* ---------- the motif ---------- */
+
+/* A file tab: trapezoid, flat bottom. */
+.tab {
+  clip-path: polygon(0 100%, var(--slant) 0, calc(100% - var(--slant)) 0, 100% 100%);
+  padding-inline: calc(var(--slant) + 14px);
+}
+
+/* The primary button carries the tab's slant on its top corners. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 26px;
+  font-weight: 600;
+  clip-path: polygon(0 100%, 0 var(--slant), var(--slant) 0, calc(100% - var(--slant)) 0, 100% var(--slant), 100% 100%);
+  transition: transform 160ms var(--ease-out), background-color 200ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn-ink {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+.btn-accent {
+  background: var(--color-accent);
+  color: #fff;
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-ink:hover {
+    background: #000;
+  }
+  .btn-accent:hover {
+    background: var(--color-p2);
+  }
+}
+
+/* A folder: a tab on top of a plate. Screens sit inside. */
+.folder {
+  --folder: var(--color-tile);
+}
+.folder > .folder-tab {
+  display: inline-block;
+  background: var(--folder);
+  font-size: var(--text-small);
+  font-weight: 600;
+  line-height: 34px;
+  height: 34px;
+}
+.folder > .folder-plate {
+  background: var(--folder);
+  padding: clamp(10px, 1.4vw, 18px);
+}
+.folder img,
+.folder video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* List bullet: the tab at text size. */
+.tab-list > li {
+  position: relative;
+  padding-left: 28px;
+}
+.tab-list > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 16px;
+  height: 9px;
+  background: currentColor;
+  clip-path: polygon(0 100%, 4px 0, calc(100% - 4px) 0, 100% 100%);
+  opacity: 0.9;
+}
+
+.link {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  transition: color 200ms ease;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- motion ---------- */
+
+/* Entrances run only with script (html.js); without it everything is simply there. */
+html.js [data-rise] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+html.js [data-rise].in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 900ms var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 75ms);
+}
+
+/* The folder stack slides up into place on load, back to front. */
+@keyframes folder-in {
+  from {
+    transform: translateY(70px);
+  }
+}
+.hero-folder {
+  animation: folder-in 1100ms var(--ease-out) both;
+  animation-delay: calc(120ms + var(--i) * 90ms);
+}
+/* Each folder's tab rises over the band of the one behind it. */
+.hero-folder + .hero-folder {
+  margin-top: -40px;
+}
+@media (min-width: 768px) {
+  .hero-folder + .hero-folder {
+    margin-top: -44px;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+.hero-line {
+  animation: fade-up 900ms var(--ease-out) both;
+  animation-delay: calc(var(--i) * 110ms);
+}
+
+/* Placeholder tabs in the live demo appear with a short settle. */
+@keyframes tag-in {
+  from {
+    opacity: 0;
+  }
+}
+.ph {
+  animation: tag-in 160ms var(--ease-out) both;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-rise] {
+    transform: none;
+  }
+  html.js [data-rise].in {
+    transition: opacity 300ms ease;
+  }
+  .hero-folder,
+  .hero-line {
+    animation: none;
+  }
+  .ph {
+    animation: none;
+  }
+  .btn:active {
+    transform: none;
+  }
+}
+
+/* ---------- Praxisalltag board ---------- */
+.alltag-board {
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(240px, auto);
+  grid-template-areas: 'h' 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'i';
+}
+@media (min-width: 900px) {
+  .alltag-board {
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 104px;
+    grid-template-areas:
+      'h h h h h h a a a a a a'
+      'h h h h h h a a a a a a'
+      'b b b b b b c c c d d d'
+      'b b b b b b c c c d d d'
+      'b b b b b b c c c d d d'
+      'b b b b b b c c c d d d'
+      'e e e f f f g g g i i i'
+      'e e e f f f g g g i i i';
+  }
+}
