@@ -20,6 +20,8 @@ export const Route = createFileRoute('/impressum')({
             <br />
             {OPERATOR.brand}
             <br />
+            {OPERATOR.street}
+            <br />
             {OPERATOR.city}, {OPERATOR.country}
           </address>
 

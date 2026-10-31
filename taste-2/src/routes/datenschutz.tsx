@@ -24,6 +24,8 @@ export const Route = createFileRoute('/datenschutz')({
           <address>
             {OPERATOR.name} ({OPERATOR.brand})
             <br />
+            {OPERATOR.street}
+            <br />
             {OPERATOR.city}, {OPERATOR.country}
             <br />
             E-Mail: {MAIL}
