@@ -16,6 +16,8 @@ export const Route = createFileRoute('/impressum')({
 
           <h2>Anbieter</h2>
           <address>
+            {OPERATOR.name}
+            <br />
             {OPERATOR.brand}
             <br />
             {OPERATOR.street}
@@ -31,7 +33,7 @@ export const Route = createFileRoute('/impressum')({
           </p>
 
           <h2>Verantwortlich für den Inhalt</h2>
-          <p>{OPERATOR.brand}, Anschrift wie oben.</p>
+          <p>{OPERATOR.name}, Anschrift wie oben.</p>
 
           <h2>Hinweis zur Software</h2>
           <p>
