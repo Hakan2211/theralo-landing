@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { CONTACT_EMAIL, DOWNLOAD_SIZE, DOWNLOAD_URL, VERSION } from '@/lib/site'
+import { CONTACT_EMAIL, DOWNLOAD_SIZE, DOWNLOAD_URL, HOMEPAGE_URL, VERSION } from '@/lib/site'
 import { BrowserFrame } from './browser-frame'
 import { WindowsMark } from './icons'
 import { NAV, Wordmark } from './nav'
@@ -87,7 +87,12 @@ export function Footer() {
       </Container>
       <Separator />
       <Container className="flex flex-col gap-3 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-        <p>Theralo · Version {VERSION}</p>
+        <p>
+          © {new Date().getFullYear()}{' '}
+          <a href={HOMEPAGE_URL} className="hover:text-foreground">
+            Hakanda.com
+          </a>
+        </p>
         <p className="flex gap-6">
           <a href="/impressum" className="hover:text-foreground">
             Impressum

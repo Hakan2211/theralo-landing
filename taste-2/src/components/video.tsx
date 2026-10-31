@@ -12,7 +12,7 @@ export function Video() {
       center
     >
       <BrowserFrame title="Theralo in 5 Minuten" className="rise mx-auto mt-12 max-w-4xl">
-        <video controls preload="metadata" poster="/screens/kalender@1x.webp" width={1920} height={1080} className="block aspect-video h-auto w-full bg-foreground object-cover">
+        <video controls preload="none" poster="/screens/kalender@1x.webp" width={1920} height={1080} className="block aspect-video h-auto w-full bg-foreground object-cover">
           <source src={VIDEO_URL} type="video/mp4" />
           <a href={VIDEO_URL}>Video herunterladen</a>
         </video>
